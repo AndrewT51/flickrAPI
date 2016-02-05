@@ -1,0 +1,15 @@
+<div class="listItem xs-col-12">
+  <img src="{{feed.media.m}}" alt="" class="picture">
+  <div class="content">
+    <h4><a href="{{feed.link}}">{{feed.title}}</a></h4>
+    <small>Published: 
+      <span>{{feed.published|date:"d MMM yyyy"}} at {{feed.published|date:"HH:mm"}}</span>
+    </small>
+    <small id="author">
+      <a href="{{flickrUserPage + feed.author_id}}">Photo author</a>
+    </small>
+    <small>
+      <a href="{{feed.link}}">View on Flickr</a>
+    </small>
+  </div>
+</div>

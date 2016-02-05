@@ -1,0 +1,24 @@
+.picture {
+  height: 20vh;
+  width: 30vw;
+  min-width: 20vh;
+  min-height: 20vw;
+  max-width: 25vw;
+  max-height: 20vh;
+  display: inline-block;
+}
+
+.content {
+  display: inline-block;
+  margin-top: 2px;
+  margin-left: 10px;
+}
+
+.content>h4 {
+  margin-top: 2px;
+}
+
+.listItem {
+  border: black solid 1px;
+  margin: 2px;
+}
