@@ -1,16 +1,22 @@
-<div class="listItem row">
+<div class="listItem row ng-cloak">
   <div class="col-xs-5 col-md-3 picContainer">
     <img src="{{feed.media.m}}" alt="" ng-click="itemDetail(feed)" class="img-responsive">
   </div>
   <div class="col-xs-7 col-md-9">
-    <h3 ng-click="itemDetail(feed)"><a >{{feed.title|truncate:40}}</a></h3>
-    <small>Published: 
+    <h3 ng-click="itemDetail(feed)" >
+      <a class="below800">{{feed.title|truncate:28}}</a>
+      <a class="above800">{{feed.title|truncate:40}}</a>
+    </h3>
+    <small class="below800">Published: 
       <span>{{feed.published|date:"d MMM yyyy"}} at {{feed.published|date:"HH:mm"}}</span>
     </small>
     <small id="author">
       <a href="{{feed.usersPage}}">{{feed.author}}</a>
     </small>
-    <small>
+    <small class="above800">Published: 
+      <span>{{feed.published|date:"d MMM yyyy"}} at {{feed.published|date:"HH:mm"}}</span>
+    </small>
+    <small id="viewFlickrLink" >
       <a href="{{feed.link}}">View on Flickr</a>
     </small>
   </div>
