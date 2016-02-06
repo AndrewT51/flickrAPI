@@ -20,10 +20,17 @@ let myApp = angular.module("myApp",["ui.router"])
   })
 
 .controller("mainCtrl", function ($scope,userService,$state,store){
-  $scope.tagSearchedFor = "";
-  $scope.conductSearch = function(searchterm){
+
+  // This function to keep my code DRY. Intial call sets up the input placeholder,
+  // subsequent invocations set placeholder to previously searched term
+  function searchControl(searchterm){
     $scope.tagSearchedFor = searchterm;
+    $scope.placeholder = $scope.tagSearchedFor ? $scope.tagSearchedFor : "Search for...";
     $scope.search ="";
+  }
+  searchControl('');
+  $scope.conductSearch = function(searchterm){
+    searchControl(searchterm)
   }
 
   // needed a way to update the factory.store and to use the queryparams at the same time
@@ -43,7 +50,7 @@ let myApp = angular.module("myApp",["ui.router"])
   })
 })
 
-.controller("singlePost", function($scope,userService,store){
+.controller("singlePost", function($scope,userService,store,$state){
   if(!store.getfeed){
     userService.getData()
     .then(function success(data){

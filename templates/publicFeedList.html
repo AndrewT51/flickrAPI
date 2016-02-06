@@ -1,5 +1,8 @@
-<div class="row searchBar">
-  <button class="col-xs-2 col-xs-offset-2" ng-click="conductSearch(search)">Search by tag</button>
-  <input type="text" placeholder="Enter tag name" class="col-xs-6" ng-model="search">
+<div class="searchBar">
+  <button class="btn btn-info" ng-click="conductSearch(search)">Search</button>
+  <button class="btn btn-info" ng-click="conductSearch('')">All</button>
+  <input type="text" placeholder="{{placeholder}}" class="searchInput" ng-model="search">
 </div>
-<author-panel ng-repeat="feed in feeds"></author-panel>
+<div class="spacer">
+  <author-panel ng-repeat="feed in feeds"></author-panel>
+</div>

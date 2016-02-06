@@ -14,6 +14,9 @@
     display: none;
   }
 }
+body{
+  padding-top: 0;
+}
 
 .content>h4 {
   margin-top: 2px;
@@ -37,10 +40,30 @@
 }
 
 .searchBar {
-  margin-top: 20px;
-  margin-bottom: 20px;
-
+  top:0;
+  left:0;
+  width:100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 100px;
+  background-color: white;
+  position: fixed;
+  border-bottom: black solid 1px;
+  z-index: 1;
 }
+
+.searchInput {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+  height:34px;
+}
+
+.spacer {
+  margin-top: 90px;
+}
+
 img {
   border-right: black solid 1px;
   min-width:100% ;
