@@ -1,4 +1,4 @@
-<div class="listItem row ng-cloak">
+<div class="listItem row ng-cloak" ng-if="feed.tags.indexOf(tagSearchedFor)>=0 || tagSearchedFor === ''">
   <div class="col-xs-5 col-md-3 picContainer">
     <img src="{{feed.media.m}}" alt="" ng-click="itemDetail(feed)" class="img-responsive">
   </div>

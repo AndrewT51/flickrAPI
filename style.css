@@ -33,13 +33,14 @@
 }
 
 .tags {
-  margin-top: 6px;
+  margin-top: 26px;
 }
 
-button {
-  margin-top: 25px;
-}
+.searchBar {
+  margin-top: 20px;
+  margin-bottom: 20px;
 
+}
 img {
   border-right: black solid 1px;
   min-width:100% ;
@@ -47,6 +48,11 @@ img {
   height: 175px;
   max-height:175px ;
   min-height:175px ;
+}
+
+#detailPagePic {
+  margin-bottom: 20px;
+  border: black solid 1px;
 }
 
 .inline>li {
@@ -66,6 +72,7 @@ img {
 
 
 /* The following stylings are for the custom back-button created with a directive */
+
 a>back-button{
   color: black;
 }
@@ -78,7 +85,7 @@ a>back-button{
 
 .customBtn span {
   position:absolute;
-  left:3px;
+  left:5px;
   top:3px;
 }
 

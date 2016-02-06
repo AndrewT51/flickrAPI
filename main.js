@@ -20,6 +20,11 @@ let myApp = angular.module("myApp",["ui.router"])
   })
 
 .controller("mainCtrl", function ($scope,userService,$state,store){
+  $scope.tagSearchedFor = "";
+  $scope.conductSearch = function(searchterm){
+    $scope.tagSearchedFor = searchterm;
+    $scope.search ="";
+  }
 
   // needed a way to update the factory.store and to use the queryparams at the same time
   // this is what I came up with
@@ -38,7 +43,7 @@ let myApp = angular.module("myApp",["ui.router"])
   })
 })
 
-.controller("singlePost", function($scope,userService,store,$state,$rootScope){
+.controller("singlePost", function($scope,userService,store){
   if(!store.getfeed){
     userService.getData()
     .then(function success(data){
@@ -69,6 +74,7 @@ let myApp = angular.module("myApp",["ui.router"])
       feed.author = feed.author.match(/\((.+)\)/)[1];
       feed.description = feed.description.replace(/(<.+?>)/g, "");
       feed.usersPage = "https://www.flickr.com/photos/" + feed.author_id;
+      feed.tags = feed.tags.split(" ");
     })
     return modified
   }
