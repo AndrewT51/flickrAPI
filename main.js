@@ -1,5 +1,5 @@
 'use strict';
-let myApp = angular.module("myApp",["ui.router"])
+var myApp = angular.module("myApp",["ui.router"])
 
 .config(function($urlRouterProvider, $stateProvider){
   $urlRouterProvider.otherwise('/')
@@ -21,14 +21,22 @@ let myApp = angular.module("myApp",["ui.router"])
 
 .controller("mainCtrl", function ($scope,userService,$state,store){
 
-  // This function to keep my code DRY. Intial call sets up the input placeholder,
+  // If this page has been called from a tag on the detail page, take the
+  // tag and use it as the immediate search term
+  if(store.getTag){
+    searchControl(store.getTag)
+    store.setTag('');
+  }else{
+    searchControl('');  
+  }
+
+  // Intial call sets up the input placeholder,
   // subsequent invocations set placeholder to previously searched term
   function searchControl(searchterm){
     $scope.tagSearchedFor = searchterm;
     $scope.placeholder = $scope.tagSearchedFor ? $scope.tagSearchedFor : "Search for...";
     $scope.search ="";
   }
-  searchControl('');
   $scope.conductSearch = function(searchterm){
     searchControl(searchterm)
   }
@@ -42,7 +50,7 @@ let myApp = angular.module("myApp",["ui.router"])
 
   // Successfully retrieve the data and then modify it with my service to make it into
   // presentable data across the app
-  let myData = userService.getData()
+  var myData = userService.getData()
   .then(function success(data){
     $scope.feeds = userService.modifyData(data)
   }, function error(err){
@@ -67,6 +75,10 @@ let myApp = angular.module("myApp",["ui.router"])
     })
   }
   $scope.item = store.getfeed;
+  $scope.changePageAndSearch = function(tag){
+    store.setTag(tag);
+    $state.go('list')
+  }
 })
 
 
@@ -104,14 +116,14 @@ let myApp = angular.module("myApp",["ui.router"])
   return {
     getFeed : '',
     setFeed: function(feed) {
-
       this.getfeed = feed
+    },
+    getTag: '',
+    setTag: function(tag){
+      this.getTag = tag
     }
   }
 })
-
-
-
 
 .filter('truncate', function () {
   return function (str, length) {

@@ -24,7 +24,8 @@
       <div class="col-xs-11 tags">
         <ul class="inline">
           <li ng-repeat="tag in item.tags" class="col-xs-4">
-            <a>{{tag}}</a>
+            <!-- <a ui-sref="list">{{tag}}</a> -->
+            <a ng-click="changePageAndSearch(tag)">{{tag}}</a>
           </li>
         </ul>
         
