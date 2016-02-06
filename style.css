@@ -1,24 +1,33 @@
-.picture {
-  height: 20vh;
-  width: 30vw;
-  min-width: 20vh;
-  min-height: 20vw;
-  max-width: 25vw;
-  max-height: 20vh;
-  display: inline-block;
-}
-
-.content {
-  display: inline-block;
-  margin-top: 2px;
-  margin-left: 10px;
-}
-
 .content>h4 {
   margin-top: 2px;
 }
+.picContainer {
+  padding:0;
+}
 
 .listItem {
+  height:175px;
+  min-height: 175px;
+  max-height:175px;
   border: black solid 1px;
   margin: 2px;
+  overflow: hidden;
+}
+
+.tags {
+  margin-top: 6px;
+}
+
+button {
+  margin-top: 25px;
+}
+
+img {
+  border-right: black solid 1px;
+  min-width:100% !important;
+  max-width:100% !important;
+  height: 175px;
+  max-height:175px !important;
+  min-height:175px !important;
+
 }

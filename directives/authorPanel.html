@@ -1,12 +1,14 @@
-<div class="listItem xs-col-12">
-  <img src="{{feed.media.m}}" alt="" class="picture">
-  <div class="content">
-    <h4><a href="{{feed.link}}">{{feed.title}}</a></h4>
+<div class="listItem row">
+  <div class="col-xs-5 col-md-3 picContainer">
+    <img src="{{feed.media.m}}" alt="" ng-click="itemDetail(feed)" class="img-responsive">
+  </div>
+  <div class="col-xs-7 col-md-9">
+    <h3 ng-click="itemDetail(feed)"><a >{{feed.title|truncate:40}}</a></h3>
     <small>Published: 
       <span>{{feed.published|date:"d MMM yyyy"}} at {{feed.published|date:"HH:mm"}}</span>
     </small>
     <small id="author">
-      <a href="{{flickrUserPage + feed.author_id}}">Photo author</a>
+      <a href="{{feed.usersPage}}">{{feed.author}}</a>
     </small>
     <small>
       <a href="{{feed.link}}">View on Flickr</a>
