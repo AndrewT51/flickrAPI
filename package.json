@@ -25,7 +25,7 @@
     "gulp-uglify": "^1.5.1"
   },
   "dependencies": {
-    "angular-utils-pagination": "^0.10.0",
-    "gulp": "^3.9.0"
+    "angular-utils-pagination": "^0.10.0"
+  
   }
 }
