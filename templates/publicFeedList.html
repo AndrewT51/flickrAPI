@@ -8,5 +8,6 @@
   <img class="icon" src="dist/pics/potato.png" alt="">
 </div>
 <div class="spacer">
-  <author-panel ng-repeat="feed in feeds"></author-panel>
+  <author-panel  dir-paginate="feed in feeds | filter:tagSearchedFor | itemsPerPage : 6"></author-panel>
+  <dir-pagination-controls></dir-pagination-controls>
 </div>
