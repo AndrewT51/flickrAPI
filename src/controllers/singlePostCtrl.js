@@ -12,11 +12,17 @@ myApp.controller("singlePost", ["$scope", "userService", "store", "$state", ($sc
       }, function(err){
         console.log("Error: ",err)
       })
+    // The data is sent to the modifyData service to change it in ways appropriate
+    // for use throughout the app
     $scope.item = userService.modifyData(data)
     $scope.item = store.getfeed;
     })
   }
+
   $scope.item = store.getfeed;
+
+  // If a tag is clicked on this will take the user to the search page with
+  // the search for that tag already initiated
   $scope.changePageAndSearch = tag =>{
     store.setTag(tag);
     $state.go('list')

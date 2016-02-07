@@ -21,7 +21,7 @@ myApp.controller("mainCtrl",["$scope", "userService", "$state", "store",($scope,
 
   $scope.conductSearch = searchterm => searchControl(searchterm); 
   
-   // Ensure that the search can be activated with a press of the return button
+  // Ensure that the search can be activated with a press of the return button
   let searchInput = document.querySelector('.searchInput');
   searchInput.addEventListener("keyup",function(e){
     let keyCode = e.keyCode || e.which;
@@ -30,8 +30,10 @@ myApp.controller("mainCtrl",["$scope", "userService", "$state", "store",($scope,
     }
   })
 
-  // needed a way to update the factory.store and to use the queryparams at the same time
-  // this is what I came up with
+  // Instead of using ui-sref, this will take me to the singlePostCtrl
+  // and fill the url params with unique data to allow a "memory" of the page content. This is immediately
+  // after using the store to carry the data of the chosen item to the other controllers.
+
   $scope.itemDetail = item => {
     store.setFeed(item)
     $state.go('singlePost', {id: item.author_id, published: item.published}, { notify: true });
