@@ -1,7 +1,11 @@
 <div class="searchBar">
-  <button class="btn btn-info" ng-click="conductSearch(search)">Search</button>
-  <button class="btn btn-info" ng-click="conductSearch('')">All</button>
-  <input type="text" placeholder="{{placeholder}}" class="searchInput" ng-model="search">
+  <button class="btn btn-default submitSearch" ng-click="conductSearch(search)">Search</button>
+  <button class="btn btn-default" ng-click="conductSearch('')">All</button>
+  <div class="egg">
+    <input type="text" placeholder="{{placeholder}}" class="searchInput" ng-model="search">
+    <img class="iconEgg" src="pics/potatoFace.png" alt="">
+  </div>
+  <img class="icon" src="pics/potato.png" alt="">
 </div>
 <div class="spacer">
   <author-panel ng-repeat="feed in feeds"></author-panel>

@@ -33,13 +33,22 @@ var myApp = angular.module("myApp",["ui.router"])
   // Intial call sets up the input placeholder,
   // subsequent invocations set placeholder to previously searched term
   function searchControl(searchterm){
-    $scope.tagSearchedFor = searchterm;
+    $scope.tagSearchedFor = searchterm.toLowerCase();
     $scope.placeholder = $scope.tagSearchedFor ? $scope.tagSearchedFor : "Search for...";
     $scope.search ="";
   }
   $scope.conductSearch = function(searchterm){
     searchControl(searchterm)
   }
+
+  // Ensure that the search can be activated with a press of the return button
+  var searchInput = document.querySelector('.searchInput');
+  searchInput.addEventListener("keyup",function(e){
+    var keyCode = e.keyCode || e.which;
+    if (keyCode == 13){
+      angular.element(document.querySelector('.submitSearch').click())
+    }
+  })
 
   // needed a way to update the factory.store and to use the queryparams at the same time
   // this is what I came up with
@@ -59,6 +68,9 @@ var myApp = angular.module("myApp",["ui.router"])
 })
 
 .controller("singlePost", function($scope,userService,store,$state){
+
+  // If this page is returned to from an external webpage link, this code will use the
+  // url params to find the data in order to repopulate the page 
   if(!store.getfeed){
     userService.getData()
     .then(function success(data){
@@ -66,8 +78,6 @@ var myApp = angular.module("myApp",["ui.router"])
       temp.forEach(function(item){
         if(item.published === $state.params.published && item.author_id === $state.params.id){
           store.setFeed(item)
-        }else{
-          console.log(item)
         }
       })
     $scope.item = userService.modifyData(data)
@@ -82,18 +92,28 @@ var myApp = angular.module("myApp",["ui.router"])
 })
 
 
-.service('userService', function ($http) {
+.service('userService', function ($http,$filter) {
   this.getData = function (data) {
     return $http.jsonp("https://api.flickr.com/services/feeds/photos_public.gne?tags=potato&tagmode=all&format=json&jsoncallback=JSON_CALLBACK")
   }
   this.modifyData = function(data){
     // Receive the data and immediately adjust some of it with regexp to get the relevant text to display
-    var modified = data.data.items; 
+    var modified = data.data.items,
+        suffix = ['th','st','nd','rd'],
+        day,
+        lastNumInDay,
+        tempDateVar; 
     modified.forEach(function(feed){
       feed.author = feed.author.match(/\((.+)\)/)[1];
       feed.description = feed.description.replace(/(<.+?>)/g, "");
       feed.usersPage = "https://www.flickr.com/photos/" + feed.author_id;
       feed.tags = feed.tags.split(" ");
+      tempDateVar = $filter('date')(feed.published,"d MMM yyyy 'at' hh:mm");
+      day = tempDateVar.match(/\d+/)[0];
+      // logic to add proper suffix to the date
+      lastNumInDay = day.length > 1 ? day[1] : day[0]; 
+      day = (day <10 || day > 20) ? day + (suffix[lastNumInDay] || "th"): day + "th";
+      feed.usableDate = day + tempDateVar.substring(day.length - 2)
     })
     return modified
   }
@@ -134,6 +154,8 @@ var myApp = angular.module("myApp",["ui.router"])
       return String(str).substring(0, length-3) + "...";
     }
   };
-});
+})
+
+
 
 

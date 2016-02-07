@@ -14,8 +14,9 @@
     display: none;
   }
 }
+
 body{
-  padding-top: 0;
+  background-color: lightgrey;
 }
 
 .content>h4 {
@@ -26,6 +27,10 @@ body{
   padding:0;
 }
 
+.btn:focus {
+  outline:0;
+}
+
 .listItem {
   height:175px;
   min-height: 175px;
@@ -33,10 +38,25 @@ body{
   border: black solid 1px;
   margin: 2px;
   overflow: hidden;
+  background-color: #f7f7f7;
 }
 
 .tags {
   margin-top: 26px;
+}
+
+.eachTag {
+  margin-right:5px;
+}
+
+.bottomImage{
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width:100vw;
+  height: 40vh;
+  z-index:-1;
+  opacity:.5;
 }
 
 .searchBar {
@@ -46,16 +66,18 @@ body{
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 100px;
-  background-color: white;
+  background-color: #f7f7f7;
   position: fixed;
   border-bottom: black solid 1px;
   z-index: 1;
 }
 
 .searchInput {
+  padding-left:8px;
   border-radius: 5px;
   border-style: solid;
-  border-color: lightgrey;
+  border-color: #A79D9D;
+  opacity:.5;
   border-width: 1px;
   height:34px;
 }
@@ -63,8 +85,11 @@ body{
 .spacer {
   margin-top: 90px;
 }
+.bottomSpacer {
+  margin-bottom: 40vh;
+}
 
-img {
+.picContainer img{
   border-right: black solid 1px;
   min-width:100% ;
   max-width:100% ;
@@ -82,8 +107,6 @@ img {
   display: inline;
 }
 
-
-
 #author, #viewFlickrLink {
   text-decoration: underline;
   margin-right: 15px
@@ -93,6 +116,34 @@ img {
   margin-left: 15px;
 }
 
+.icon {
+  position: absolute;
+  right:100px;
+  margin:0;
+  z-index:-1;
+  height: 40px;
+  width:40px;
+}
+
+.egg {
+    margin-left:4px;
+    z-index:1;
+    position: absolute;
+    display: inline;
+    height: 34px;
+    clip: rect(0, auto, auto, 0);
+}
+
+.iconEgg {
+    position: fixed;
+    right: 72px;
+    top: -9px;
+    margin: 0;
+    z-index: -1;
+    height: 100px;
+    width: 94px;
+
+}
 
 /* The following stylings are for the custom back-button created with a directive */
 
@@ -102,6 +153,7 @@ a>back-button{
 
 .customBtn {
   position:fixed;
+  z-index:1;
   top:10px;
   right:150px;
 }
@@ -128,7 +180,7 @@ a>back-button{
   padding: 10px;
   height: 30px;
   width: 50px;
-  background-color: lightgrey;
+  background-color: #f7f7f7;
   border: black solid 2px;
   border-left: 0;
   border-top-right-radius: 4px;
@@ -142,7 +194,7 @@ a>back-button{
   height: 0;
   width: 0;
   border: 15px solid transparent;
-  border-right-color: lightgrey;
+  border-right-color: #f7f7f7;
 }
 
 
