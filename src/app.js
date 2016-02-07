@@ -1,1 +1,0 @@
-let myApp = angular.module("myApp",["ui.router","angularUtils.directives.dirPagination"]);
