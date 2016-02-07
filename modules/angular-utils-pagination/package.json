@@ -1,0 +1,79 @@
+{
+  "_args": [
+    [
+      "angular-utils-pagination",
+      "/Users/Andy/Desktop/potatoMasterCopy/flickrAPI"
+    ]
+  ],
+  "_from": "angular-utils-pagination@*",
+  "_id": "angular-utils-pagination@0.10.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular-utils-pagination",
+  "_nodeVersion": "4.2.2",
+  "_npmUser": {
+    "email": "michael@michaelbromley.co.uk",
+    "name": "michaelbromley"
+  },
+  "_npmVersion": "2.14.7",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular-utils-pagination",
+    "raw": "angular-utils-pagination",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-utils-pagination/-/angular-utils-pagination-0.10.0.tgz",
+  "_shasum": "a2629d7868f36b9058a82e8c3dfd5599cfa5bd70",
+  "_shrinkwrap": null,
+  "_spec": "angular-utils-pagination",
+  "_where": "/Users/Andy/Desktop/potatoMasterCopy/flickrAPI",
+  "author": {
+    "email": "michael@michaelbromley.co.uk",
+    "name": "Michael Bromley"
+  },
+  "bugs": {
+    "url": "https://github.com/michaelbromley/angularUtils/issues"
+  },
+  "dependencies": {},
+  "description": "Magical automatic pagination for anything in AngularJS",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "a2629d7868f36b9058a82e8c3dfd5599cfa5bd70",
+    "tarball": "http://registry.npmjs.org/angular-utils-pagination/-/angular-utils-pagination-0.10.0.tgz"
+  },
+  "gitHead": "33bb22b818586fd39f05c529029cbb004c231415",
+  "homepage": "https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "directive",
+    "pagination",
+    "paging"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "michaelbromley",
+      "email": "michael@michaelbromley.co.uk"
+    }
+  ],
+  "name": "angular-utils-pagination",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelbromley/angularUtils.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.10.0"
+}
