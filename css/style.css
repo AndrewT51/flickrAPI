@@ -15,6 +15,29 @@
   }
 }
 
+@media screen and (max-width:400px){
+  .searchBar {
+    padding-left: 10px;
+  }
+  .icon {
+    right: 10px;
+  }
+  .iconEgg {
+    right: -18px;
+  }
+}
+@media screen and (min-width:400px){
+  .searchBar {
+    padding-left: 100px;
+  }
+  .icon{
+    right: 100px;
+  }
+  .iconEgg {
+    right: 72px;
+  }
+}
+
 body{
   background-color: lightgrey;
 }
@@ -65,7 +88,6 @@ body{
   width:100%;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 100px;
   background-color: #f7f7f7;
   position: fixed;
   border-bottom: black solid 1px;
@@ -118,7 +140,6 @@ body{
 
 .icon {
   position: absolute;
-  right:100px;
   margin:0;
   z-index:-1;
   height: 40px;
@@ -136,7 +157,6 @@ body{
 
 .iconEgg {
     position: fixed;
-    right: 72px;
     top: -9px;
     margin: 0;
     z-index: -1;
