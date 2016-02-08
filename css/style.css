@@ -24,6 +24,28 @@
     padding-left: 100px;
   }
 }
+@media screen and (max-width:400px){
+  .searchBar {
+    padding-left: 10px;
+  }
+  .icon {
+    right: 10px;
+  }
+  .iconEgg {
+    right: -18px;
+  }
+}
+@media screen and (min-width:400px){
+  .searchBar {
+    padding-left: 100px;
+  }
+  .icon{
+    right: 100px;
+  }
+  .iconEgg {
+    right: 72px;
+  }
+}
 body{
   background-color: lightgrey;
 }
@@ -126,7 +148,6 @@ body{
 
 .icon {
   position: absolute;
-  right:100px;
   margin:0;
   z-index:-1;
   height: 40px;
@@ -135,7 +156,7 @@ body{
 
 .egg {
     z-index:1;
-     margin-left:4px;
+    margin-left:4px;
     position: absolute;
     display: inline;
     height: 34px;
@@ -144,7 +165,6 @@ body{
 
 .iconEgg {
     position: fixed;
-    right: 72px;
     top: -9px;
     margin: 0;
     z-index: -1;
